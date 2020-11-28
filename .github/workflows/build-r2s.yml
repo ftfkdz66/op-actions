@@ -50,6 +50,7 @@ jobs:
         sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
         sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' ./feeds.conf.default
         sed -i '$a src-git jerryk https://github.com/jerrykuku/openwrt-package' ./feeds.conf.default
+        sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' ./feeds.conf.default
 
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -63,11 +64,6 @@ jobs:
         git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
         git clone https://github.com/vernesong/OpenClash.git package/luci-app-OpenClash
   
-    - name: Change file
-      run: |
-        cd openwrt
-        curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
-
     - name: Configuration customization - Build_R2S
       env:
         CONFIG_FILE: 'r2s.config'
