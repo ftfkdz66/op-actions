@@ -68,7 +68,6 @@ jobs:
       working-directory: ./openwrt
       run: |
         curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
-
   
     - name: Configuration customization - Build_R2S
       env:
