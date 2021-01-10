@@ -64,10 +64,10 @@ jobs:
         git clone https://github.com/frainzy1477/luci-app-clash.git package/luci-app-clash
         git clone https://github.com/vernesong/OpenClash.git package/luci-app-OpenClash
 
-    - name: Change file
-      working-directory: ./openwrt
-      run: |
-        curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
+#    - name: Change file
+#      working-directory: ./openwrt
+#      run: |
+#        curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/19.07/net/https-dns-proxy/files/https-dns-proxy.init > ./feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
   
     - name: Configuration customization - Build_R2S
       env:
